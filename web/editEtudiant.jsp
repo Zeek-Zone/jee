@@ -1,25 +1,37 @@
-<%-- 
-    Document   : editEtudiant
-    Created on : 22 mars 2026, 21:50:15
-    Author     : ok
---%>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="includes/auth.jsp" %>
+<%@ include file="includes/header.jsp" %>
+<body>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-       <form action="${pageContext.request.contextPath}/etudiant/update" method="POST">
-    <input type="hidden" name="id" value="<%= request.getParameter("id") %>">
+    <!-- 🔷 NAVBAR -->
+    <%@ include file="includes/navbar.jsp" %>
 
-    Nom: <input type="text" name="nom"><br>
-    Prenom: <input type="text" name="prenom"><br>
-    Email: <input type="email" name="email"><br>
+    <!-- 🔷 CONTENT -->
+    <div class="container mt-4">
+        <h2>Modifier un Étudiant</h2>
+        <div class="card shadow-sm mt-3" style="max-width: 600px;">
+            <div class="card-body">
+                <form action="${pageContext.request.contextPath}/etudiant/update" method="POST">
+                    <input type="hidden" name="id" value="<%= request.getParameter("id") %>">
 
-    <button type="submit">Update</button>
-</form>
-    </body>
+                    <div class="mb-3">
+                        <label class="form-label">Nom:</label>
+                        <input type="text" class="form-control" name="nom" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Prénom:</label>
+                        <input type="text" class="form-control" name="prenom" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email:</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning">Modifier</button>
+                    <a href="${pageContext.request.contextPath}/etudiant/list" class="btn btn-secondary">Annuler</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
 </html>

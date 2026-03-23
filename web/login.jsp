@@ -1,24 +1,45 @@
-<%-- 
-    Document   : login
-    Created on : 19 mars 2026, 00:31:30
-    Author     : ok
---%>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="includes/header.jsp" %>
+<body>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h2>Login</h2>
+    <!-- 🔷 NAVBAR -->
+    <%@ include file="includes/navbar.jsp" %>
+    
+    <!-- 🔷 CONTENT -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4>Login</h4>
+                    </div>
+                    <div class="card-body">
+                        <% if (request.getAttribute("error") != null) { %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= request.getAttribute("error") %>
+                            </div>
+                        <% } %>
 
-        <form action="login" method="POST">
-            Username: <input type="text" name="username"><br>
-            Password: <input type="password" name="password"><br>
-            <button type="submit">Login</button>
-        </form>
-        <a href="${pageContext.request.contextPath}/register.jsp">Creer compte</a>
-    </body>
+                        <form action="login" method="POST">
+                            <div class="mb-3">
+                                <label class="form-label">Username:</label>
+                                <input type="text" class="form-control" name="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Password:</label>
+                                <input type="password" class="form-control" name="password" required>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <small>Pas encore de compte ? <a href="${pageContext.request.contextPath}/register.jsp">Créer un compte</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
