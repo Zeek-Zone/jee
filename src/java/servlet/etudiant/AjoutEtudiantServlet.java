@@ -26,7 +26,7 @@ public class AjoutEtudiantServlet extends HttpServlet {
         if(success){
             request.setAttribute("etudiant", e);
 
-            RequestDispatcher rd = request.getRequestDispatcher("etudiant.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("detailEtudiant.jsp");
             rd.forward(request, response);
         } else {
             response.getWriter().println("Erreur lors de l'insertion");

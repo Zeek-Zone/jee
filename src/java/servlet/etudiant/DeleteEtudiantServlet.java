@@ -24,6 +24,6 @@ public class DeleteEtudiantServlet extends HttpServlet {
         EtudiantDAO dao = new EtudiantDAO();
         dao.delete(id);
 
-        response.sendRedirect("etudiant/list");
+        response.sendRedirect("list");
     }
 }
