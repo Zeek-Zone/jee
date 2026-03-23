@@ -17,6 +17,18 @@ import model.Etudiant;
 @WebServlet("/etudiant/update")
 public class UpdateEtudiantServlet extends HttpServlet {
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        EtudiantDAO dao = new EtudiantDAO();
+        Etudiant e = dao.getById(id);
+
+        request.setAttribute("etudiant", e);
+        request.getRequestDispatcher("/editEtudiant.jsp").forward(request, response);
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
 

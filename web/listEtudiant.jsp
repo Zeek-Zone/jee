@@ -32,7 +32,7 @@
                         <td><%= e.getNom() %></td>
                         <td>
                             <a class="btn btn-sm btn-info" href="${pageContext.request.contextPath}/etudiant/details?id=<%= e.getId()%>">Détails</a>
-                            <a class="btn btn-sm btn-warning" href="${pageContext.request.contextPath}/editEtudiant.jsp?id=<%= e.getId()%>">Modifier</a>
+                            <a class="btn btn-sm btn-warning" href="${pageContext.request.contextPath}/etudiant/update?id=<%= e.getId()%>">Modifier</a>
                             <a class="btn btn-sm btn-danger" href="${pageContext.request.contextPath}/etudiant/delete?id=<%= e.getId()%>">Supprimer</a>
                         </td>
                     </tr>

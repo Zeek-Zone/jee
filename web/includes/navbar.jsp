@@ -21,9 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.request.contextPath}/ajoutEtudiant.jsp">Ajouter Étudiant</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="${pageContext.request.contextPath}/utilisateur/list">Utilisateurs</a>
-                    </li>
+                    </li> -->
                 </ul>
 
                 <!-- RIGHT -->

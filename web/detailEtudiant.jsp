@@ -31,7 +31,7 @@
         <div class="mt-3">
             <a class="btn btn-secondary" href="${pageContext.request.contextPath}/etudiant/list">Retour à la liste</a>
             <% if (e != null) { %>
-                <a class="btn btn-warning" href="${pageContext.request.contextPath}/editEtudiant.jsp?id=<%= e.getId() %>">Modifier</a>
+                <a class="btn btn-warning" href="${pageContext.request.contextPath}/etudiant/update?id=<%= e.getId() %>">Modifier</a>
             <% } %>
         </div>
     </div>
