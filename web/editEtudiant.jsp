@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="model.Etudiant" %>
 <%@ include file="includes/auth.jsp" %>
 <%@ include file="includes/header.jsp" %>
 <body>
@@ -7,6 +8,13 @@
     <%@ include file="includes/navbar.jsp" %>
 
     <!-- 🔷 CONTENT -->
+    <%
+        Etudiant e = (Etudiant) request.getAttribute("etudiant");
+        String nom = e != null ? e.getNom() : "";
+        String prenom = e != null ? e.getPrenom() : "";
+        String email = e != null ? e.getEmail() : "";
+    %>
+
     <div class="container mt-4">
         <h2>Modifier un Étudiant</h2>
         <div class="card shadow-sm mt-3" style="max-width: 600px;">
@@ -16,15 +24,15 @@
 
                     <div class="mb-3">
                         <label class="form-label">Nom:</label>
-                        <input type="text" class="form-control" name="nom" required>
+                        <input type="text" class="form-control" name="nom" value="<%= nom %>" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Prénom:</label>
-                        <input type="text" class="form-control" name="prenom" required>
+                        <input type="text" class="form-control" name="prenom" value="<%= prenom %>" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email:</label>
-                        <input type="email" class="form-control" name="email" required>
+                        <input type="email" class="form-control" name="email" value="<%= email %>" required>
                     </div>
 
                     <button type="submit" class="btn btn-warning">Modifier</button>
